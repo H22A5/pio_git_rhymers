@@ -8,8 +8,7 @@ public class DefaultCountingOutRhymer {
 
     public void countIn(int in) {
         if (!isFull())
-            setTotal(getTotal() + 1);
-            getNumbers()[getTotal()] = in;
+            numbers[++total] = in;
     }
 
     public boolean callCheck() {
@@ -23,24 +22,13 @@ public class DefaultCountingOutRhymer {
     protected int peekaboo() {
         if (callCheck())
             return -1;
-        return getNumbers()[getTotal()];
+        return numbers[total];
     }
 
     public int countOut() {
         if (callCheck())
             return -1;
-        return getNumbers()[getTotal() - 1];
+        return numbers[total--];
     }
 
-    public int[] getNumbers() {
-        return numbers;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
 }
