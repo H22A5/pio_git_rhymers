@@ -1,6 +1,10 @@
 package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
+    public static int getTotal() {
+        return total;
+    }
+
     private static int total = -1;
     private static final int tableSize = 12;
 
